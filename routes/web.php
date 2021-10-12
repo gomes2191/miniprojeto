@@ -14,13 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
-    Route::get('admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
-    Route::get('balance', [App\Http\Controllers\Admin\BalanceController::class, 'index'])->name('balance');
+
+    Route::post('deposit', [App\Http\Controllers\Admin\BalanceController::class, 'depositStore'])->name('deposit.store');
+    Route::get('deposit', [App\Http\Controllers\Admin\BalanceController::class, 'deposit'])->name('balance.deposit');
+
+    Route::get('balance', [App\Http\Controllers\Admin\BalanceController::class, 'index'])->name('admin.balance');
+    Route::get('/', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.home');
 });
 
 
 //Route::get('admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 
-//Route::get('/', [App\Http\Controllers\Portal\PortalController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\Portal\PortalController::class, 'index'])->name('home');
 
 Auth::routes();

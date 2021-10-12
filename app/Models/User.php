@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Balance;
 
 class User extends Authenticatable
 {
@@ -41,4 +42,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Cria o relacionamento 1 para 1.
+     *
+     * @return void
+     */
+    public function balance()
+    {
+        return $this->hasOne(Balance::class);
+    }
 }

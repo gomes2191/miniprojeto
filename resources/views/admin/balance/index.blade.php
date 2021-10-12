@@ -18,14 +18,14 @@
             <div class="col-lg-3 col-3"></div>
             <div class="col-lg-3 col-6">
                 <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-primary">Depositar</button>
-                    <button type="button" class="btn btn-danger">Sacar</button>
+                    <a href="{{ route('balance.deposit') }}" type="button" class="btn btn-primary">Depositar</a>
+                    <a href="{{ route('balance.deposit'); }}" type="button" class="btn btn-danger">Sacar</a>
                 </div>
                 <p> </p>
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3>R$ {{ number_format($amount, 2, ',', '')  }}</h3>
 
                   <p>New Orders</p>
                 </div>
