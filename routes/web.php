@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['auth'], 'namespace' => 'Admin'], function () {
+Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::get('admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
+    Route::get('balance', [App\Http\Controllers\Admin\BalanceController::class, 'index'])->name('balance');
 });
 
 
