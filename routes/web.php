@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['auth'], 'namespace' => 'Admin'], function () {
+    Route::get('admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 });
+
+
+//Route::get('admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
+
+//Route::get('/', [App\Http\Controllers\Portal\PortalController::class, 'index'])->name('home');
+
+Auth::routes();
