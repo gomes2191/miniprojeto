@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 
 
         /**
-         * Efetua a inserção do usuário na tabela usuário.
+         * Efetua a inserção dos dados na tabela específicada.
          *
          * @return void
          */

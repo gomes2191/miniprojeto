@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Historic extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['type', 'amount', 'total_before', 'total_after', 'date'];
 }
