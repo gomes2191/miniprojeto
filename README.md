@@ -1,1 +1,1 @@
-Mini projeto de controle de depósito.
+Mini Projeto de Controle de depósito.
